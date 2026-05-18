@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>演習課題5-1：カウンタ</title>
+</head>
+<body>
+  <div id="msg">0</div>
+
+<button id="startButton">スタート</button>
+<button id = "countButton" disable>カウント</button>
+
+<script>
+const c = document.getElementById("msg");
+const start = document.getElementById("startButton");
+const countButton = document.getElementById("countButton");
+
+let count = 0;
+
+//スタートボタン押したら
+function startClick() {
+  count = 0;
+	c.innerHTML = count;
+
+	//カウントボタンを押す
+	countButton.disabled = false;
+
+	//5秒後
+	setTimeout(() => {
+		countButton.disabled = true;
+		c.innerHTML = "結果："　+ count + "回";
+
+	}, 5000);
+
+}
+
+function countClick() {
+
+	count++;
+
+	c.innerHTML = count;
+}
+
+start.onclick = startClick;
+countButton.onclick = countClick;
+
+</script>
+
+  
+</body>
+</html>
